@@ -77,7 +77,7 @@ router.route("/:urlObject").get((req, res) => {
           } else {
             responseObject.gameObject = currentGame;
             const movesModTwo = currentGame.numberOfMoves % 2;
-            if ((movesModTwo === (isRed ? 1 : 0)) && currentGame.gameStatus == "active") {
+            if (((movesModTwo === (isRed ? 1 : 0)) && currentGame.gameStatus == "active") || currentGame.gameStatus == "completed") {
               responseObject.success = true;
               responseObject.send = true;
               console.log("successfully sending updated game");

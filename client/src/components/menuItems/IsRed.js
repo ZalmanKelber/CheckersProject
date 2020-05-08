@@ -1,20 +1,20 @@
 import React from "react";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 
 function IsRed(props) {
   return (
-    <ButtonGroup onChange={props.handleChange} className="button-group-layout" toggle>
+    <ToggleButtonGroup name="isRed" className="button-group-layout" toggle>
       <ToggleButton className="panel-button panel-button-header" variant="dark" type="radio" name="isRed" disabled>
         Choose which color to play:
       </ToggleButton>
-      <ToggleButton className="panel-button" variant="outline-dark" type="radio" name="isRed" defaultChecked value="false">
+      <ToggleButton onChange={props.handleChange} className="panel-button" variant="outline-dark" type="radio" name="isRed" defaultChecked value="false">
         Black (goes first)
       </ToggleButton>
-      <ToggleButton className="panel-button" variant="outline-dark" type="radio" name="isRed" value="true">
+      <ToggleButton onChange={props.handleChange} className="panel-button" variant="outline-dark" type="radio" name="isRed" value="true">
         Red (goes second)
       </ToggleButton>
-    </ButtonGroup>
+    </ToggleButtonGroup>
   );
 }
 
